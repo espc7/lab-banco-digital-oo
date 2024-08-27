@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Banco {
@@ -19,6 +20,12 @@ public class Banco {
 
 	public void setContas(List<Conta> contas) {
 		this.contas = contas;
+	}
+
+	public List<Cliente> getClientes(){
+		List<Cliente> clientes = new ArrayList<Cliente>();
+		contas.forEach(conta -> clientes.add(conta.getCliente()));
+		return clientes;
 	}
 
 }
